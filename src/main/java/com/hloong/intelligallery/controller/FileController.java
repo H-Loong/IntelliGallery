@@ -6,7 +6,7 @@ import com.hloong.intelligallery.common.ResultUtils;
 import com.hloong.intelligallery.constant.UserConstant;
 import com.hloong.intelligallery.exception.BusinessException;
 import com.hloong.intelligallery.exception.ErrorCode;
-import com.hloong.intelligallery.manager.CosManager;
+import com.hloong.intelligallery.manage.CosManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
