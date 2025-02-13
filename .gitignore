@@ -1,4 +1,4 @@
-### Custom ###
+# 忽略 application-local.yml
 application-local.yml
 
 
