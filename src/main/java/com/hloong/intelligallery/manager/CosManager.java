@@ -1,4 +1,4 @@
-package com.hloong.intelligallery.manage;
+package com.hloong.intelligallery.manager;
 
 import com.hloong.intelligallery.config.CosClientConfig;
 import com.qcloud.cos.COSClient;
