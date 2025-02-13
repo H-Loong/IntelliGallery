@@ -6,6 +6,8 @@ import com.hloong.intelligallery.model.domain.Picture;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hloong.intelligallery.model.domain.User;
 import com.hloong.intelligallery.model.dto.picture.PictureQueryRequest;
+import com.hloong.intelligallery.model.dto.picture.PictureReviewRequest;
+import com.hloong.intelligallery.model.dto.picture.PictureUploadByBatchRequest;
 import com.hloong.intelligallery.model.dto.picture.PictureUploadRequest;
 import com.hloong.intelligallery.model.vo.PictureVO;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,7 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 */
 public interface PictureService extends IService<Picture> {
 
-    PictureVO uploadPicture(MultipartFile multipartFile, PictureUploadRequest pictureUploadRequest, User loginUser);
+
+    PictureVO  uploadPicture(Object inputSource, PictureUploadRequest pictureUploadRequest, User loginUser);
 
     QueryWrapper<Picture> getQueryWrapper(PictureQueryRequest pictureQueryRequest);
 
@@ -28,4 +31,16 @@ public interface PictureService extends IService<Picture> {
     Page<PictureVO> getPictureVOPage(Page<Picture> picturePage, HttpServletRequest request);
 
     void validPicture(Picture picture);
+
+    /**
+     * 图片审核
+     *
+     * @param pictureReviewRequest
+     * @param loginUser
+     */
+    void doPictureReview(PictureReviewRequest pictureReviewRequest, User loginUser);
+
+    void fillReviewParams(Picture picture, User loginUser);
+
+    Integer uploadPictureByBatch(PictureUploadByBatchRequest pictureUploadByBatchRequest, User loginUser);
 }
